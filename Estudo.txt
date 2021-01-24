@@ -27,3 +27,18 @@ interface.
 3º Criar um sistema de rotas 
 
 	Criar a pasta Routes/api
+	Importar na pasta principal e mandar o redirecionamento dessas pastas pala lá
+	app.use('endereço', arquivo do router)
+
+	No arquivo router, você importa o express. e tras o Router(Método do express)
+	Importar para o arquivo, também importar os modelos
+
+****pesquisar direitinho export default vs module.exports
+
+	construir um modo get e um modo post
+	no modo get ele utiliza a função find() e tras absolutamente tudo, lembrando que o retorno é uma promisse
+	no modo post, você cria um item novo do model e depois salva ele no DB com o comando save() que também é uma promisse
+
+*****pesquisar a diferença entre await e .then
+
+	Construir também um método de delete, e passar como característica o id

@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const mongoose = require('mongoose');
 
 const items = require('./routes/api/items')
@@ -18,6 +18,9 @@ mongoose
     .connect(db)
     .then( () => console.log('MongoDB is connected ...'))
     .catch( (err) => console.log(err) );
+
+//redirect the request to routes
+app.use('/api/items', items)
 
 //config the port that server will use. The enviroment port or 5000
 const port = process.env.PORT || 5000;
