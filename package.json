@@ -1,0 +1,21 @@
+{
+  "name": "mernist",
+  "version": "1.0.0",
+  "description": "A to do app to study Mern pack",
+  "main": "server.js",
+  "author": "Andre Richardi",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  }
+}

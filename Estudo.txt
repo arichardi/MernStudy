@@ -1,0 +1,15 @@
+Fazer um descritivo do meu estudo de MERN
+
+Criação de um sistema app básico com to do list usando Mongo Express React and Node
+
+1º Criar um backend bem simples para dar suporte para o meu app
+
+	Instalar uma estrutura básica para o programa com o npm init ou yarn
+	Instalar os módulos que nós vamos usar para o desenvolvimento
+	Express, Moongose, Body-parser, concurrently
+	Instalar o Nodemon como dependencia!
+
+	Criar um script para rodar em modo de servidor e um que rode o nodemon
+
+	(estudar o body parser - ver se ele ainda é necessário, eu não posso substituir pelo json.express ?
+	O body parser foi incorporado ao express, você pode usar o express.json() no lugar
