@@ -13,3 +13,17 @@ Criação de um sistema app básico com to do list usando Mongo Express React an
 
 	(estudar o body parser - ver se ele ainda é necessário, eu não posso substituir pelo json.express ?
 	O body parser foi incorporado ao express, você pode usar o express.json() no lugar
+
+	Criar uma key que relaciona o seu BD com o programa que você está usando, e conectar os dois usando o mongoose, como 
+interface.
+	Criar um app.listen para deixar o seu servidor rodando. Usar o enviroment.Port como possibilidade do servidor
+
+2º Criar os modelos que eles vão utilizar para conversar com o BD
+
+	Criar a pasta models, para gerir os modelos do BD
+	Criar um arquivo com o nosso modelo e importar o mogoose e o Schema
+	Criar um novo modelo de BD e exportar
+
+3º Criar um sistema de rotas 
+
+	Criar a pasta Routes/api

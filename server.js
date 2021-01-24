@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require('mongoose');
 
+const items = require('./routes/api/items')
+
 const app = express();
 
 //Middleware que substitiu o body parser e que lê o json no body do post
