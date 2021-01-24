@@ -42,3 +42,16 @@ interface.
 *****pesquisar a diferença entre await e .then
 
 	Construir também um método de delete, e passar como característica o id
+
+4º Criar uma pasta client e instalar o create-react-app lá
+	
+	Criar um proxy para o endereço na pasta do json
+
+***aqui vai entrar o cuncurrently que permite que a gente execute os dois servidores ao mesmo tempo !	
+	adiciona nos scripts     "client": "cd client && yarn start" (para entrar dentro da pasta client e executar o yarn)
+	"dev": "concurrently \" yarn server\" \"yarn client\" " (para rodar os dois comandos ao mesmo tempo)
+	"client-install": "cd client && yarn", (vai facilitar para instalar as dependencias do client)
+
+	Dentro do projeto react, dar aquela limpada básica nos arquivos
+
+	
