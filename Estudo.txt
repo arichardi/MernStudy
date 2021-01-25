@@ -54,4 +54,6 @@ interface.
 
 	Dentro do projeto react, dar aquela limpada básica nos arquivos
 
+	Primeiro passo, instalar o reactstrap (bootstrap) e fazer uma navbar básica
+
 	
