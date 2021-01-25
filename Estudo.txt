@@ -55,5 +55,8 @@ interface.
 	Dentro do projeto react, dar aquela limpada básica nos arquivos
 
 	Primeiro passo, instalar o reactstrap (bootstrap) e fazer uma navbar básica
+	Seguir a documentação da nav bar no site do reactstrap
+
+	Fazer agora a lista
 
 	
