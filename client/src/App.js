@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import AppNavBar from './components/AppNavBar'
 import ShoppingList from './components/ShoppingList'
 import { Provider } from 'react-redux'
-import store from './store'
+import store from './redux/store'
 
 function App() {
   return (
