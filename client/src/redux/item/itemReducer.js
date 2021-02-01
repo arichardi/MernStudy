@@ -10,10 +10,10 @@ const initialState = {
     ]
 }
 
-const ItemReducer = (state = initialState, actions) => {
+const itemReducer = (state = initialState, actions) => {
     switch(actions.type){
         case GET_ITEMS: return {
-            ...state, 
+            ...state
         }
         default: return state
     }
@@ -22,4 +22,4 @@ const ItemReducer = (state = initialState, actions) => {
 
 
 
-export default ItemReducer
+export default itemReducer
