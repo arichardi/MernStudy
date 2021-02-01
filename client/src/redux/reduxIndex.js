@@ -1,1 +1,1 @@
-export {getItems} from './item/ItemActions'
+export {getItems, deleteItems} from './item/ItemActions'

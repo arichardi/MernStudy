@@ -6,3 +6,11 @@ export const getItems = () => {
         info: 'list all the itens of my state',
     }
 }
+
+export const deleteItems = (id) => {
+    return {
+        type: DELETE_ITEMS,
+        payload: id, 
+        INFO: 'remove item from the list'
+    }
+}

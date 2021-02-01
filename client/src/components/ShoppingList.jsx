@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Button, Container, ListGroup, ListGroupItem } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import {useDispatch, useSelector} from 'react-redux'
-import { getItems } from '../redux/reduxIndex'
+import { getItems, deleteItems } from '../redux/reduxIndex'
 
 
 
@@ -20,16 +20,6 @@ console.log(items.items)
    
     return (
         <Container>
-            <Button 
-            color='dark'
-            style={{marginBottom: '2rem'}}
-            onClick={ () => {
-                const name = prompt('Enter Item')
-                if(name){
-                    //setItems([...items, {id:uuid(), name: name}]);
-                }
-            }}
-            >Add Item</Button>
 
             <ListGroup>
                 <TransitionGroup className='shopping-list' >
@@ -42,7 +32,7 @@ console.log(items.items)
                                         className='remove-btn'
                                         color='danger'
                                         size='sm'
-                                        //onClick={() => handleDelete(id)}                                                                 
+                                        onClick={ () => {dispatch(deleteItems(id))}}                                                                 
                                     >&times;</Button>
                                     {name}
                                     </ListGroupItem>
