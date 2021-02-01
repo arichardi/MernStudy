@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Container, ListGroup, ListGroupItem } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { v4 as uuid } from 'uuid'
+import { useSelector, useDispatch } from 'react-redux'
+import { getItems } from '../redux/reduxIndex'
 
 
 function ShoppingList () {
 
-    const [items, setItems] = React.useState([
-        {id: uuid(), name:'eggs'},
-        {id: uuid(), name:'milk'},
-        {id: uuid(), name:'steak'},
-        {id: uuid(), name:'water'}
-    ])
- 
+
+    const dispatch = useDispatch()
+    useEffect( () => { dispatch(getItems()) }, [])
+
+    const listItems = useSelector( (state) => state.items)
+    
+    
     function handleDelete(id){
         const newlist = items.filter( item => item.id !== id)
         setItems(newlist)
@@ -33,7 +35,7 @@ function ShoppingList () {
 
             <ListGroup>
                 <TransitionGroup className='shopping-list' >
-                    {items.map(({id, name}) => {
+                    {listItems.map(({id, name}) => {
                         return (
                             <CSSTransition key={id} timeout={500} classNames='fade' >
                                 <ListGroupItem>
