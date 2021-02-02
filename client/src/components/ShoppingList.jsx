@@ -12,12 +12,7 @@ const dispatch = useDispatch()
 useEffect( () => { dispatch(getItems) },[])
  
 const items = useSelector( (state) => state.item)
-console.log(items.items)
-/*     function handleDelete(id){
-        const newlist = items.filter( item => item.id !== id)
-        setItems(newlist)
-    } */
-   
+  
     return (
         <Container>
 

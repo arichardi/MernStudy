@@ -14,3 +14,11 @@ export const deleteItems = (id) => {
         INFO: 'remove item from the list'
     }
 }
+
+export const addItems = (item) => {
+    return {
+        type: ADD_ITEMS,
+        payload: item, 
+        INFO: 'add the new item in the list'
+    }
+}

@@ -1,15 +1,35 @@
-import React, {Component, useState} from 'react'
-import { Modal, Button, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState} from 'react'
+import { Modal, Button, ModalHeader, ModalBody, Form, FormGroup, Label, Input, ModalFooter } from 'reactstrap'
+import { useDispatch } from 'react-redux'
+import { addItems } from '../redux/reduxIndex'
+import { v4 as uuid } from 'uuid'
 import {  } from '../redux/reduxIndex'
 
 function ItemModal(){
 
     const [modal, setModal] = useState(false)
-    const [itemAdd, setItemAdd] = useState()
+    const [itemAdd, setItemAdd] = useState('')
 
+    const dispatch = useDispatch()
 
     const toggleModal = () => setModal(!modal);
+
+    const onChange = (e) => {
+        setItemAdd(e.target.value)
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const newItem = {
+            id: uuid(),
+            name: itemAdd
+        }
+        //add item via dispatch
+        dispatch(addItems(newItem))
+        //close the modal
+        toggleModal();
+
+    }
     
     return (
         <div>
@@ -25,7 +45,7 @@ function ItemModal(){
             >
                 <ModalHeader toggle={toggleModal} >Add to List</ModalHeader>
                 <ModalBody>
-                    <Form >
+                    <Form onSubmit={onSubmit} >
                         <FormGroup>
                             <Label for='item' >Item</Label> 
                             <Input 
@@ -33,11 +53,11 @@ function ItemModal(){
                             name='name'
                             id='item'
                             placeholder='Digit the item'
-                            onChange={ (e) => {
-                                setItemAdd( e.target.name)
-                            }}
+                            onChange={onChange}
                             />
                         </FormGroup>
+                    <Button color='primary' style={{marginRight: '1rem'}}>Add to the list</Button>
+                    <Button color='secondary' onClick={toggleModal}>Cancel</Button>
                     </Form>
                 </ModalBody>
             </Modal>
