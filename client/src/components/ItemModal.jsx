@@ -1,5 +1,5 @@
 import React, { useState} from 'react'
-import { Modal, Button, ModalHeader, ModalBody, Form, FormGroup, Label, Input, ModalFooter } from 'reactstrap'
+import { Modal, Button, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap'
 import { useDispatch } from 'react-redux'
 import { addItems } from '../redux/reduxIndex'
 import { v4 as uuid } from 'uuid'
