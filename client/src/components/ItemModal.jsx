@@ -9,26 +9,21 @@ function ItemModal(){
     const [itemAdd, setItemAdd] = useState()
 
 
-    function toggleModal(modal){
-        if(modal){
-            setModal(!modal)
-        }
-    }
-
+    const toggleModal = () => setModal(!modal);
     
     return (
         <div>
             <Button
                 color='dark'
                 style={ { marginBottom: '2rem',}}
-                onClick = { () => toggleModal(modal) }
+                onClick = {toggleModal}
             >Add Item</Button>
 
             <Modal
                 isOpen={modal}
-                toggle={ () => toggleModal(modal)}
+                toggle={toggleModal}
             >
-                <ModalHeader toggle={() => toggleModal(modal)}>Add to List</ModalHeader>
+                <ModalHeader toggle={toggleModal} >Add to List</ModalHeader>
                 <ModalBody>
                     <Form >
                         <FormGroup>

@@ -16,7 +16,7 @@ const itemReducer = (state = initialState, actions) => {
             ...state
         }
         case DELETE_ITEMS: return {
-            ...state, items: state.items.filter( item => item.id != actions.payload)
+            ...state, items: state.items.filter( item => item.id !== actions.payload)
         }
         default: return state
     }
