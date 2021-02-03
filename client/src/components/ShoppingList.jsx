@@ -9,7 +9,7 @@ import { getItems, deleteItems } from '../redux/reduxIndex'
 function ShoppingList () {
 
 const dispatch = useDispatch()
-useEffect( () => { dispatch(getItems) },[])
+useEffect( () => { dispatch(getItems()) },[])
  
 const items = useSelector( (state) => state.item)
   
@@ -18,16 +18,16 @@ const items = useSelector( (state) => state.item)
 
             <ListGroup>
                 <TransitionGroup className='shopping-list' >
-                    {items.items.map(({id, name}) => {
+                    {items.items.map(({_id, name}) => {
                         return (
-                            <CSSTransition key={id} timeout={500} classNames='fade' >
+                            <CSSTransition key={_id} timeout={500} classNames='fade' >
                                 <ListGroupItem>
                                     <Button
                                         style={{marginRight: '1rem'}} 
                                         className='remove-btn'
                                         color='danger'
                                         size='sm'
-                                        onClick={ () => {dispatch(deleteItems(id))}}                                                                 
+                                        onClick={ () => {dispatch(deleteItems(_id))}}                                                                 
                                     >&times;</Button>
                                     {name}
                                     </ListGroupItem>

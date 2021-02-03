@@ -14,7 +14,7 @@ const itemReducer = (state = initialState, actions) => {
             loading: false
         }
         case DELETE_ITEMS: return {
-            ...state, items: state.items.filter( item => item.id !== actions.payload)
+            ...state, items: state.items.filter( item => item._id !== actions.payload)
         }
         case ADD_ITEMS: return {
             ...state, items: [actions.payload, ...state.items]
