@@ -1,10 +1,17 @@
-import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS } from './itemTypes'
+import axios from 'axios'
+import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING } from './itemTypes'
 
-export const getItems = () => {
-    return {
+
+//on line you have to fetch the itens that you intend send to DB
+//first use dispatch to run the setitemsloading, and then to send the type
+export const getItems = () => dispatch =>  {
+    dispatch(setItemsLoading());
+    axios.get('/api/items')
+    .then(response => dispatch({
         type: GET_ITEMS,
-        info: 'list all the itens of my state',
-    }
+        payload: response.data,
+        INFO: 'get the items in the server'
+    }))
 }
 
 export const deleteItems = (id) => {
@@ -20,5 +27,12 @@ export const addItems = (item) => {
         type: ADD_ITEMS,
         payload: item, 
         INFO: 'add the new item in the list'
+    }
+}
+
+export const setItemsLoading = () => {
+    return {
+        type: ITEMS_LOADING,
+        INFO: 'keep track if there any fetching'
     }
 }
