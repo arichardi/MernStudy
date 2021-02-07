@@ -2,7 +2,6 @@ import React, { useState} from 'react'
 import { Modal, Button, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap'
 import { useDispatch } from 'react-redux'
 import { addItems } from '../redux/reduxIndex'
-import { v4 as uuid } from 'uuid'
 import {  } from '../redux/reduxIndex'
 
 function ItemModal(){
@@ -21,7 +20,6 @@ function ItemModal(){
     const onSubmit = (e) => {
         e.preventDefault();
         const newItem = {
-            id: uuid(),
             name: itemAdd
         }
         //add item via dispatch
