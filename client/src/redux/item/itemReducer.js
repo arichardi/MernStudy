@@ -1,13 +1,9 @@
 import {v4 as uuid} from 'uuid'
-import {GET_ITEMS, ADD_ITEMS, DELETE_ITEMS} from './itemTypes'
+import {GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING} from './itemTypes'
 
 const initialState = {
-    items: [
-        {id: uuid(), name:'eggs'},
-        {id: uuid(), name:'milk'},
-        {id: uuid(), name:'steak'},
-        {id: uuid(), name:'water'}
-    ]
+    items: [],
+    loading: false
 }
 
 const itemReducer = (state = initialState, actions) => {
@@ -20,7 +16,10 @@ const itemReducer = (state = initialState, actions) => {
         }
         case ADD_ITEMS: return {
             ...state, items: [actions.payload, ...state.items]
-        };
+        }
+        case ITEMS_LOADING: return {
+            ...state, loading: true
+        }
         default: return state
     }
 }

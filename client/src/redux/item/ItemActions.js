@@ -1,4 +1,5 @@
-import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS } from './itemTypes'
+import { GET_ITEMS, ADD_ITEMS, DELETE_ITEMS, ITEMS_LOADING } from './itemTypes'
+import axios from 'axios'
 
 export const getItems = () => {
     return {
@@ -20,5 +21,12 @@ export const addItems = (item) => {
         type: ADD_ITEMS,
         payload: item, 
         INFO: 'add the new item in the list'
+    }
+}
+
+export const itemsLoading = () => {
+    return {
+        type: ITEMS_LOADING,
+        INFO: 'fetch the items from server'
     }
 }
