@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path')
 
 const items = require('./routes/api/items')
 
@@ -21,6 +22,15 @@ mongoose
 
 //redirect the request to routes
 app.use('/api/items', items)
+
+//serve the static assets
+if(process.env.NODE_ENV === 'production'){
+    //set static folder
+    app.use(express.static('client/build'))
+
+    app.get('*', (request, response) => 
+    response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')))
+}
 
 //config the port that server will use. The enviroment port or 5000
 const port = process.env.PORT || 5000;
