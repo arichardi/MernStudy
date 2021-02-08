@@ -2,7 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path')
 
+//bring the itens path
 const items = require('./routes/api/items')
+const users = require('./routes/api/users')
 
 const app = express();
 
@@ -22,6 +24,7 @@ mongoose
 
 //redirect the request to routes
 app.use('/api/items', items)
+app.use('/api/users', users)
 
 //serve the static assets
 if(process.env.NODE_ENV === 'production'){
