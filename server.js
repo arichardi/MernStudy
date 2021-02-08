@@ -18,7 +18,7 @@ const db = require('./config/keys').mongoURL;
 //use that key to connect in mongoose
 //o retorno é uma promise, and you can send a console back to visualize the feedback
 mongoose
-    .connect(db)
+    .connect(db, { useNewUrlParser: true, useCreateIndex: true})
     .then( () => console.log('MongoDB is connected ...'))
     .catch( (err) => console.log(err) );
 
