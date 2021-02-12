@@ -29,6 +29,22 @@ router.post('/', (request, response) => {
             });
 
             //create Salt and Hash
+            bcript.genSalt(10, (error, salt) => {
+                 return bcript.hash(newUser.password, salt, (error, hash) => {
+                     if (error) throw error;
+                     newUser.password = hash;
+                     newUser.save()
+                     .then(user => {
+                         response.json({
+                             user: {
+                                 id: user.id,
+                                 name: user.name,
+                                 email: user.email
+                             }
+                         })
+                     })
+                 })
+            })
 
         })
 
