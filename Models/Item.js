@@ -15,4 +15,4 @@ const ItemSchema = new Schema({
 });
 
 //export the models, mongoose.model(name, schema const)
-module.exports  = Item = mongoose.model('item', ItemSchema)
+module.exports = Item = mongoose.model('item', ItemSchema)

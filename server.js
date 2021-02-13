@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path')
+const config = require('config')
 
 //bring the itens path
 const items = require('./routes/api/items')
@@ -13,7 +14,7 @@ app.use(express.json());
 
 //Config of DB
 //import the keyconfig and link to the mongoURL
-const db = require('./config/keys').mongoURL;
+const db = config.get('mongoURL');
 
 //use that key to connect in mongoose
 //o retorno é uma promise, and you can send a console back to visualize the feedback
