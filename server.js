@@ -6,6 +6,7 @@ const config = require('config')
 //bring the itens path
 const items = require('./routes/api/items')
 const users = require('./routes/api/users')
+const auth = require('./routes/api/auth')
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 //Config of DB
 //import the keyconfig and link to the mongoURL
+//using config lib = config.get from config folder
 const db = config.get('mongoURL');
 
 //use that key to connect in mongoose
@@ -26,6 +28,7 @@ mongoose
 //redirect the request to routes
 app.use('/api/items', items)
 app.use('/api/users', users)
+app.use('/api/auth', auth)
 
 //serve the static assets
 if(process.env.NODE_ENV === 'production'){

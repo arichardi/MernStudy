@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const authMW = require('../../middleware/authMW') 
+
 //import the models
 const Item = require('../../Models/Item');
 
@@ -12,7 +14,7 @@ router.get('/', (request, response) => {
 })
 
 //post
-router.post('/', (request, response) => {
+router.post('/', authMW, (request, response) => {
     //create a new item using the body of the post
     const newItem = new Item({
         name: request.body.name
@@ -22,7 +24,7 @@ router.post('/', (request, response) => {
 })
 
 //Delete
-router.delete('/:id', (request, response) => {
+router.delete('/:id',authMW, (request, response) => {
     //take the id from the address request, than remove the item
     //if there's an error, response with a error message
     Item.findById( request.params.id)
